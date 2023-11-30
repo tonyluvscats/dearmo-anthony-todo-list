@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+header {
+    background-color: white;
+    border-bottom: 2px solid black;
+}
+
 header > h1 {
     text-align: center;
     padding: 10px;
@@ -15,6 +20,7 @@ article {
     border-radius: 8px;
     margin: 10px;
     text-align: left;
+    background-color: white;
 }
 
 article h2 {
@@ -25,12 +31,17 @@ article h2 {
 body {
     font-size: 20px;
     font-family: 'Shadows Into Light', cursive;
+    background: url("../images/pexels-fauxels-3184357.jpg");
+    background-position: center;
+    min-height: 1080px;
+    background-repeat: no-repeat;
 }
 
 main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 180px;
 }
 
 #todo h2 {
@@ -47,9 +58,11 @@ main {
     border-bottom: 4px solid green;
 }
 
+/*
 article ul li:first-of-type {
     background-color: yellow;
 }
+*/
 
 ul {
     list-style-type:decimal;
@@ -58,4 +71,23 @@ ul {
 li {
     margin-left: 30px;
     padding-left: 0px;
+    border-bottom: 2px solid lightgray;
+}
+
+ul li:last-child {
+    border-bottom: 0px;
+}
+
+#inprogress li:has(input:checked) {
+    color: gray;
+    background-color: wheat;
+}
+
+#completed li:has(input:checked) {
+    color: gray;
+    background-color: lightgreen;
+}
+
+li:has(input:checked)::after {
+    content: "👍";
 }
